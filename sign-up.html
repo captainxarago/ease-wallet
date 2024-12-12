@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up</title>
+</head>
+<body>
+  <h2>Sign Up</h2>
+  <form action="/api/signup" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+    <label for="phone">Phone Number:</label>
+    <input type="text" id="phone" name="phone" placeholder="e.g., 0611112666" required>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <br>
+    <label for="currency">Currency:</label>
+    <select id="currency" name="currency" required>
+      <option value="USD">USD</option>
+      <option value="KES">KES</option>
+    </select>
+    <br>
+    <center><button type="submit"><a href="/index.html"></a>Sign Up</button></center>
+    <p>Already have an account?<a href="/login.html" style="text-decoration: 20px;"> Sign In Here</a></p>
+  </form>
+</body>
+</html>

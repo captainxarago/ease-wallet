@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Make Payment</title>
+</head>
+<body>
+  <h2>Make Payment</h2>
+  <form action="/api/payment" method="POST">
+    <label for="receiverName">Recipient Name:</label>
+    <input type="text" id="receiverNmae" name="receiverName" placeholder="e.g., Abdikarim Ali" required><br>
+    <label for="receiverPhone">Recipient Phone Number:</label>
+    <input type="text" id="receiverPhone" name="receiverPhone" placeholder="e.g., 0611112666" required>
+    <br>
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount" name="amount" required>
+    <br>
+    <label for="paymentMethod">Payment Method:</label>
+    <select id="paymentMethod" name="paymentMethod" required>
+      <option value="wallet">Wallet</option>
+      <option value="creditCard">Credit Card</option>
+      <option value="mobileMoney">Mobile Money</option>
+    </select>
+    <br>
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" placeholder="Optional description"></textarea>
+    <br>
+    <button type="submit">Pay Now</button>
+  </form>
+
+  <!-- Back to Dashboard Link -->
+  <div style="margin-top: 20px;">
+    <center><a href="/index.html">Back to Dashboard</a></center>
+   </div>
+</body>
+</html>

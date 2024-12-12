@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Top-Up Wallet</title>
+</head>
+<body>
+  <h2>Top-Up Wallet</h2>
+
+  <!-- Top-Up Form -->
+  <form action="/api/wallet/top-up" method="POST">
+    <label for="amount">Enter Amount:</label>
+    <input type="number" id="amount" name="amount" placeholder="e.g., 100" required>
+    <br>
+    <label for="paymentMethod">Select Payment Method:</label>
+    <select id="paymentMethod" name="paymentMethod" required onchange="showExtraInput()">
+      <option value="creditCard">Credit Card</option>
+      <option value="mobileMoney">Mobile Money</option>
+      <option value="bankTransfer">Bank Transfer</option>
+    </select>
+    <br>
+
+    <!-- Conditional Input Field for Mobile Money -->
+    <div id="mobileMoneyInput" style="display: none;">
+      <label for="mobileNumber">Mobile Money Number:</label>
+      <input type="text" id="mobileNumber" name="mobileNumber" placeholder="e.g., 0611112666">
+      <br>
+    </div>
+
+    <!-- Payment Details (always visible) -->
+    <label for="paymentDetails">Payment Details:</label>
+    <textarea id="paymentDetails" name="paymentDetails" placeholder="Enter your payment details (e.g., card number, account number)" required></textarea>
+    <br>
+
+    <button type="submit">Top Up</button>
+  </form>
+
+  <!-- Back to Dashboard Link -->
+  <div style="margin-top: 20px;">
+    <a href="/index.html">Back to Dashboard</a>
+  </div>
+
+  <script>
+    // JavaScript for showing/hiding the Mobile Money input
+    function showExtraInput() {
+      var paymentMethod = document.getElementById('paymentMethod').value;
+      var mobileMoneyInput = document.getElementById('mobileMoneyInput');
+
+      if (paymentMethod === 'mobileMoney') {
+        mobileMoneyInput.style.display = 'block';
+      } else {
+        mobileMoneyInput.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>

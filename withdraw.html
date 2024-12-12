@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Request Withdrawal</title>
+</head>
+<body>
+  <h2>Request Withdrawal</h2>
+  <form action="/api/wallet/withdraw" method="POST">
+    <label for="withdrawAmount">Amount:</label>
+    <input type="number" id="withdrawAmount" name="amount" required>
+    <br>
+    <label for="withdrawMethod">Withdrawal Method:</label>
+    <select id="withdrawMethod" name="withdrawMethod" required>
+      <option value="bank">Bank Transfer</option>
+      <option value="mobileMoney">Mobile Money</option>
+    </select>
+    <br>
+    <label for="accountDetails">Account Details:</label>
+    <textarea id="accountDetails" name="accountDetails" placeholder="Provide bank or mobile money account details" required></textarea>
+    <br>
+    <button type="submit">Submit Withdrawal Request</button>
+  </form>
+
+  <!-- Back to Dashboard Link -->
+  <div style="margin-top: 20px;">
+   <center><a href="/index.html">Back to Dashboard</a></center>
+  </div>
+</body>
+</html>
